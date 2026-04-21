@@ -17,7 +17,7 @@ export const contactsApi = mainApi.injectEndpoints({
     }),
     editContact: builder.mutation<boolean, {username: string, firstName?: string, lastName?: string}>({
       query: ({username, firstName, lastName}) => ({
-        url: "/contacts/contact",
+        url: "/contacts/edit",
         method: "PATCH",
         body: { username, firstName, lastName },
       }),
