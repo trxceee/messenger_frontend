@@ -40,7 +40,7 @@ const ItemUserInfo: FC<Props> = ({
         )}
       </div>
       <div className="flex flex-col items-start justify-center min-w-0">
-       <div className="flex items-center justify-center gap-2 min-w-0 w-full">
+       <div className="flex items-center justify-start gap-2 min-w-0 w-full">
          <h2 className={`shortText ${isCurrentChat ? "text-white" : "text-text-default"}`}>
           {firstName} {lastName}
         </h2>
