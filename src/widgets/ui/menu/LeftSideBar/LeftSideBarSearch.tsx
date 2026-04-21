@@ -36,19 +36,19 @@ const LeftSideBarSearch: FC<ILeftSideBarSearch> = ({
     <div className="flex w-full items-center justify-between p-3 gap-3">
       <div
         onClick={handleClick}
-        className="flex p-1.5 items-center justify-center cursor-pointer hover:bg-checkbox-hover bg-transparent rounded-full"
+        className="flex p-1.5 items-center justify-center cursor-pointer hover:bg-hover-checkbox bg-transparent rounded-full"
       >
         {isOpenSearchUsers === 'searchUsers' ? (
-          <ArrowLeft className="text-icons-color" />
+          <ArrowLeft className="text-icon" />
         ) : (
-          <Equal className="text-icons-color" />
+          <Equal className="text-icon" />
         )}
       </div>
       <SearchInput
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
         onClick={() => dispatch(openComponent("searchUsers"))}
-        icon={<Search className="text-app-inputs-placeholder" size={22} />}
+        icon={<Search className="text-input-placeholder" size={22} />}
         placeholder={t("chat.searchPlaceholder")}
       />
     </div>

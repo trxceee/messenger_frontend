@@ -12,10 +12,10 @@ const NotificationComponent = ({ content }: NotificationProps) => {
   const t = useTranslations();
 
   return (
-    <div className="flex items-center justify-start space-x-2 backdrop-blur-2xl bg-rect-bg border border-rect-boder rounded-[10px] p-3">
+    <div className="flex items-center justify-start space-x-2 backdrop-blur-2xl bg-bg-rect border border-border-rect rounded-[10px] p-3">
       <div className="flex flex-col items-start justify-start">
         <p className="text-white text-[0.9rem]">{t("notify.title")}!</p>
-        <p className="text-[0.8rem] text-text/70 leading-4.5">{content}</p>
+        <p className="text-[0.8rem] text-text-main/70 leading-4.5">{content}</p>
       </div>
     </div>
   );

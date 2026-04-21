@@ -16,8 +16,9 @@ interface ICompleteModal {
 
 const CompleteModal: FC<ICompleteModal> = ({ whoVisible, setWhoVisible }) => {
   const [value, setValue] = useState("");
-  const dispatch = useAppDispatch()
-  const setData = (data: string, field: keyof IUserCompleteData) => dispatch(setCompleteData({data, field}));
+  const dispatch = useAppDispatch();
+  const setData = (data: string, field: keyof IUserCompleteData) =>
+    dispatch(setCompleteData({ data, field }));
   const t = useTranslations();
 
   const handleSave = async () => {
@@ -29,8 +30,8 @@ const CompleteModal: FC<ICompleteModal> = ({ whoVisible, setWhoVisible }) => {
     whoVisible === "birthday"
       ? "date"
       : whoVisible === "password"
-      ? "password"
-      : "email";
+        ? "password"
+        : "email";
 
   const inputIcon =
     whoVisible === "birthday" ? (
@@ -45,8 +46,8 @@ const CompleteModal: FC<ICompleteModal> = ({ whoVisible, setWhoVisible }) => {
     whoVisible === "birthday"
       ? t("profileComplete.birthdayTitle")
       : whoVisible === "password"
-      ? t("profileComplete.passwordTitle")
-      : t("profileComplete.emailTitle");
+        ? t("profileComplete.passwordTitle")
+        : t("profileComplete.emailTitle");
 
   return (
     <form
@@ -62,14 +63,16 @@ const CompleteModal: FC<ICompleteModal> = ({ whoVisible, setWhoVisible }) => {
       />
       <div className="flex flex-col gap-4 w-full">
         <Button
-          label={t("buttons.buttonSave")}
+          buttonType="ternary"
           type="submit"
+          text={t("buttons.buttonSave")}
           className="p-2.5"
         />
-        <DefaultButton
-         type="button"
-          onClick={() => setWhoVisible(null)}
+        <Button
+          buttonType="secondary"
+          type="button"
           text={t("buttons.buttonBack")}
+          onClick={() => setWhoVisible(null)}
         />
       </div>
     </form>

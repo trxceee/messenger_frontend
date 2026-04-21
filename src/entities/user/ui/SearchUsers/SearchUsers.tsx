@@ -63,16 +63,16 @@ const SearchUsers: FC<Props> = ({ searchText, handleCloseSearch }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.2 }}
-      className="z-1233 flex flex-col items-center justify-start gap-5 h-screen overflow-y-auto text-default-text-color scrollbar-thin w-full"
+      className="z-1233 flex flex-col items-center justify-start gap-5 h-screen overflow-y-auto text-text-default scrollbar-thin w-full"
     >
       {data?.length ? (
-        <div className="flex flex-col items-start justify-center w-full gap-3 px-3 text-icons-color">
+        <div className="flex flex-col items-start justify-center w-full gap-3 px-3 text-icon">
           <p className="font-medium">{t("searchUsers.globalSearch")}:</p>
           <div className="flex flex-col w-full items-center justify-center">
             {data.map((data) => (
               <div
                 key={data.id}
-                className="flex items-center justify-center w-full hover:bg-checkbox-hover rounded-2xl p-3 cursor-pointer gap-5 text-default-text-color overflow-hidden relative"
+                className="flex items-center justify-center w-full hover:bg-hover-checkbox rounded-2xl p-3 cursor-pointer gap-5 text-text-default overflow-hidden relative"
                 onClick={(e) => handleClick(e, data.id)}
               >
                 <RenderAvatarElement
@@ -84,7 +84,7 @@ const SearchUsers: FC<Props> = ({ searchText, handleCloseSearch }) => {
                   <p className="text-[1.1rem]">
                     {data.firstName} {data.lastName}
                   </p>
-                  <p className="text-icons-color text-[.9rem]">
+                  <p className="text-icon text-[.9rem]">
                     @{data.username}
                   </p>
                 </div>
@@ -93,7 +93,7 @@ const SearchUsers: FC<Props> = ({ searchText, handleCloseSearch }) => {
           </div>
         </div>
       ) : (
-        <p className="text-icons-color px-3">{t("searchUsers.noResult")}</p>
+        <p className="text-icon px-3">{t("searchUsers.noResult")}</p>
       )}
     </motion.div>
   );

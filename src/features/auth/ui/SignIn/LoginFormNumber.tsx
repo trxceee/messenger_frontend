@@ -4,7 +4,6 @@ import { SignInType } from "@/entities";
 import { handleAuthUser, schemaSignIn } from "@/features";
 import {
   Button,
-  DefaultButton,
   DefaultInput,
   isErrorWithMessageAndType,
   OTPInput,
@@ -22,15 +21,10 @@ const LoginFormNumber = () => {
   const t = useTranslations();
 
   const [whoVisible, setWhoVisible] = useState<"code" | "password" | null>(
-    null
+    null,
   );
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    setValue,
-  } = useForm<SignInType>({
+  const { register, handleSubmit, watch, setValue } = useForm<SignInType>({
     resolver: zodResolver(schemaSignIn),
   });
 
@@ -86,18 +80,19 @@ const LoginFormNumber = () => {
       {/* buttons */}
       <div className="flex flex-col items-center justify-center gap-3 w-full">
         <Button
+          buttonType="ternary"
           type="submit"
-          label={
+          text={
             !whoVisible
               ? t("buttons.buttonSendCode")
               : t("buttons.buttonContinue")
           }
-          className="w-full p-2.5"
         />
-        <DefaultButton
+        <Button
+          buttonType="secondary"
           type="button"
           onClick={() => router.back()}
-          text={t('buttons.buttonBack')}
+          text={t("buttons.buttonBack")}
         />
       </div>
     </form>

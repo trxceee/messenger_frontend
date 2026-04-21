@@ -42,10 +42,10 @@ const FileItem: FC<Props> = ({ file }) => {
           )}
         </div>
         <div className="flex flex-col items-start justify-center min-w-0 overflow-hidden">
-          <p className="text-default-text-color text-lg truncate w-full">
+          <p className="text-text-default text-lg truncate w-full">
             {file.name}
           </p>
-          <p className="text-icons-color text-sm">
+          <p className="text-icon text-sm">
             {sizeFile.size}
             {sizeFile.unit === "MB" ? t("chat.mb") : t("chat.kb")}
           </p>
@@ -55,7 +55,7 @@ const FileItem: FC<Props> = ({ file }) => {
       {/* delete */}
       <div
         onClick={handleRemoveFile}
-        className="iconHoverEffect text-icons-color shrink-0"
+        className="iconHoverEffect text-icon shrink-0"
       >
         <BrushCleaning size={20} />
       </div>

@@ -19,7 +19,7 @@ const UserDataShortInfo: FC<Props> = ({ number, username, email, bio }) => {
     try {
       await navigator.clipboard.writeText(result.toString());
       appNotification({
-        icon: <InfoIcon size={24} className="text-icons-color" />,
+        icon: <InfoIcon size={24} className="text-icon" />,
         text: `${t(`profile.${type}`)} ${t('notify.wasCopied')}!`,
       });
     } catch (err) {
@@ -30,22 +30,22 @@ const UserDataShortInfo: FC<Props> = ({ number, username, email, bio }) => {
   const elements = [
     {
       title: "number",
-      icon: <Phone className="text-icons-color shrink-0" />,
+      icon: <Phone className="text-icon shrink-0" />,
       data: number,
     },
     {
       title: "username",
-      icon: <AtSign className="text-icons-color shrink-0" />,
+      icon: <AtSign className="text-icon shrink-0" />,
       data: username,
     },
     {
       title: "bio",
-      icon: <Info className="text-icons-color shrink-0" />,
+      icon: <Info className="text-icon shrink-0" />,
       data: bio,
     },
     {
       title: "email",
-      icon: <Mail className="text-icons-color shrink-0" />,
+      icon: <Mail className="text-icon shrink-0" />,
       data: email,
     },
   ];
@@ -61,7 +61,7 @@ const UserDataShortInfo: FC<Props> = ({ number, username, email, bio }) => {
               handleCopy(el.data ?? "", el.title as "phone" | "username" | "bio" | "email");
               createRipple(e);
             }}
-            className={`relative overflow-hidden hover:bg-checkbox-hover rounded-2xl px-5 py-2 flex items-center justify-start gap-5 cursor-pointer`}
+            className={`relative overflow-hidden hover:bg-hover-checkbox rounded-2xl px-5 py-2 flex items-center justify-start gap-5 cursor-pointer`}
           >
             {el.icon}
             <div className="flex flex-col items-start justify-center text-[.98rem]">
@@ -73,7 +73,7 @@ const UserDataShortInfo: FC<Props> = ({ number, username, email, bio }) => {
                     : ""}
                 {el.data}
               </p>
-              <p className="text-[.9rem] text-icons-color">
+              <p className="text-[.9rem] text-icon">
                 {t(`profile.${el.title}`)}
               </p>
             </div>

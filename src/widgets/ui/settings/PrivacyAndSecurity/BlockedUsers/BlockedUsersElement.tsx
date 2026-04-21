@@ -38,7 +38,7 @@ const BlockedUsersElement: FC<Props> = ({ userId }) => {
         setPosition({ x: e.clientX + 5, y: e.clientY + 5 });
         setIsOpen((prev) => !prev);
       }}
-      className="flex items-center justify-center w-full hover:bg-checkbox-hover rounded-2xl p-3 cursor-pointer gap-5 text-default-text-color"
+      className="flex items-center justify-center w-full hover:bg-hover-checkbox rounded-2xl p-3 cursor-pointer gap-5 text-text-default"
     >
       <RenderAvatarElement
         hasAvatar={!!data.avatars?.length}
@@ -49,7 +49,7 @@ const BlockedUsersElement: FC<Props> = ({ userId }) => {
         <p className="text-[1.1rem] shortText">
           {data.firstName} {data.lastName}
         </p>
-        <p className="text-icons-color text-[.9rem] shortText">@{data.username}</p>
+        <p className="text-icon text-[.9rem] shortText">@{data.username}</p>
       </div>
       <AnimatePresence>
         {isOpen && (
@@ -58,7 +58,7 @@ const BlockedUsersElement: FC<Props> = ({ userId }) => {
             children={
               <div
                 onClick={async () => await unBlock(userId)}
-                className="flex items-center justify-start hover:bg-actions-popup-hover p-2 px-3 rounded-[10px] duration-500 w-full gap-2 text-myred"
+                className="flex items-center justify-start hover:bg-hover-action p-2 px-3 rounded-[10px] duration-500 w-full gap-2 text-myred"
               >
                 <CircleOff size={19} />
                 <p>{t("settings.privacyAndSecurity.unblock")}</p>

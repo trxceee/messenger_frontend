@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { Button, DefaultButton } from "@/shared";
+import { Button } from "@/shared";
 import { appConfig } from "@/shared";
 import { useParams, useRouter } from "next/navigation";
 import AOS from "aos";
@@ -32,10 +32,11 @@ const HeroTitle = () => {
       <div className="flex flex-col items-center justify-center gap-3 w-full">
         <Button
           onClick={() => router.push(`/${params.locale}/register`)}
-          label={t("buttons.buttonSignUp")}
-          className="w-full p-2.5"
+          text={t("buttons.buttonSignUp")}
+          buttonType="ternary"
         />
-        <DefaultButton
+        <Button
+          buttonType="secondary"
           onClick={() => router.push(`/${params.locale}/auth`)}
           text={t("buttons.buttonIHaveAccount")}
         />

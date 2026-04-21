@@ -58,9 +58,9 @@ const Header = () => {
             }}
             className="iconHoverEffect"
           >
-            <X size={22} className="text-icons-color" />
+            <X size={22} className="text-icon" />
           </div>
-          <p className="text-default-text-color font-medium text-lg">
+          <p className="text-text-default font-medium text-lg">
             {files.length}{" "}
             {t(
               `chat.files.${files.length === 1 ? "filesOne" : files.length > 1 && files.length < 5 ? "filesFew" : "filesMany"}`,
@@ -71,7 +71,7 @@ const Header = () => {
         {/* manage */}
         <div
           onClick={(e) => handleOpenMenu(e)}
-          className="iconHoverEffect text-icons-color"
+          className="iconHoverEffect text-icon"
         >
           <EllipsisVertical size={22} />
         </div>
@@ -90,7 +90,7 @@ const Header = () => {
             children={
               <div
                 onClick={handleAddFile}
-                className="flex items-center justify-start hover:bg-actions-popup-hover p-2 px-3 rounded-[10px] duration-500 w-full gap-2"
+                className="flex items-center justify-start hover:bg-hover-action p-2 px-3 rounded-[10px] duration-500 w-full gap-2"
               >
                 <Plus size={19} />
                 <p className="text-[.95rem]">{t("chat.files.featFile")}</p>

@@ -16,7 +16,7 @@ const ChangeUsername: FC<
 
   return (
     <div className="flex flex-col items-start justify-center w-full px-5 gap-3">
-        <p className="text-icons-color">{t('register.information.usernameInput')}</p>
+        <p className="text-icon">{t('register.information.usernameInput')}</p>
       <div className="flex flex-col items-center justify-center gap-5">
         <AppInput
           value={username}
@@ -26,10 +26,10 @@ const ChangeUsername: FC<
           onChange={(e) => onChange(e.target.value)}
         />
         <div className="flex flex-col items-start justify-center gap-3">
-          <p className="text-icons-color text-[.8rem]">
+          <p className="text-icon text-[.8rem]">
             {t("settings.editProfileSettings.usernameSubtext")}
           </p>
-          <p className="text-icons-color text-[.8rem]">
+          <p className="text-icon text-[.8rem]">
             {t("settings.editProfileSettings.usernameSubtextTwo")}
           </p>
         </div>

@@ -12,8 +12,8 @@ export const appNotification = ({ icon, text }: Props) => {
     style: {
       textAlign: 'center',
       borderRadius: "9999px",
-      background: "var(--chatui-bg)",
-      color: "var(--default-text-color)",
+      background: "var(--bg-chat)",
+      color: "var(--text-default)",
       width: 'max-content',
       maxWidth: 'none'
     },

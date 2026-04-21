@@ -24,7 +24,7 @@ const OTPInput: FC<IOTPInput> = ({
       onChange={onChange}
       numInputs={numInputs}
       placeholder={placeholder}
-      containerStyle="flex items-center w-full justify-start space-x-3 text-text cursor-pointer"
+      containerStyle="flex items-center w-full justify-start space-x-3 text-text-main cursor-pointer"
       inputStyle={{
         display: "flex",
         justifyContent: "center",

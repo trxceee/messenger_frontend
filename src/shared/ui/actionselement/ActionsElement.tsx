@@ -27,7 +27,7 @@ const ActionsElement: FC<Props> = ({
   return (
     <div
       onClick={onClick}
-      className={`flex items-center w-full gap-3 cursor-pointer hover:bg-actions-popup-hover p-2 px-3 duration-300 ${isRed ? "text-myred" : ""} ${isFull ? "rounded-[10px]" : isFirst ? "rounded-t-[10px]" : isLast ? "rounded-b-[10px]" : ""}`}
+      className={`flex items-center w-full gap-3 cursor-pointer hover:bg-hover-action p-2 px-3 duration-300 ${isRed ? "text-myred" : ""} ${isFull ? "rounded-[10px]" : isFirst ? "rounded-t-[10px]" : isLast ? "rounded-b-[10px]" : ""}`}
     >
       {icon}
       <p className="text-[.9rem]">{t(title)}</p>

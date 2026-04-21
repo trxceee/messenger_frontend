@@ -23,7 +23,7 @@ const TimeClient = ({ initialTime }: { initialTime: string }) => {
     second: "numeric",
   }).toLowerCase();
   return (
-    <div className="absolute right-5 top-5 text-text/70 hidden lg:flex text-[.85rem]">
+    <div className="absolute right-5 top-5 text-text-main/70 hidden lg:flex text-[.85rem]">
       {timeTest}
     </div>
   );

@@ -50,7 +50,7 @@ export const handleSaveDataEditProfile = async (
   } catch (error: unknown) {
     if (isErrorWithMessageAndType(error)) {
       appNotification({
-        icon: <InfoIcon size={24} className="text-icons-color" />,
+        icon: <InfoIcon size={24} className="text-icon" />,
         text: error.data.message,
       });
     } else if (isErrorWithMessage(error)) {
@@ -58,7 +58,7 @@ export const handleSaveDataEditProfile = async (
         ? ((error as any).data?.message ?? error.message)[0]
         : ((error as any).data?.message ?? error.message);
       appNotification({
-        icon: <InfoIcon size={24} className="text-icons-color" />,
+        icon: <InfoIcon size={24} className="text-icon" />,
         text: msg,
       });
     }

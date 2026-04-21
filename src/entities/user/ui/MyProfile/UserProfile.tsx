@@ -17,7 +17,7 @@ const UserProfile: FC<IUserProfile> = ({ data, setOpenedAvatar }) => {
   const t = useTranslations();
 
   return (
-    <div className="z-1233 flex flex-col items-center justify-start gap-5 h-screen overflow-y-auto text-default-text-color scrollbar-thin w-full">
+    <div className="z-1233 flex flex-col items-center justify-start gap-5 h-screen overflow-y-auto text-text-default scrollbar-thin w-full">
       <motion.div
         exit={{ opacity: 0, scale: 0.8, x: -300 }}
         initial={{ opacity: 0, scale: 0.8, x: -300 }}
@@ -42,7 +42,7 @@ const UserProfile: FC<IUserProfile> = ({ data, setOpenedAvatar }) => {
               <p className="text-xl">
                 {data.firstName} {data.lastName}
               </p>
-              <p className="text-icons-color text-[.85rem]">
+              <p className="text-icon text-[.85rem]">
                 {t("settings.online")}
               </p>
             </div>

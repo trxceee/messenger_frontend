@@ -42,7 +42,7 @@ const UserSettingsHeaderConstructor: FC<IUserSettingsHeaderConstructor> = ({
   };
 
   return (
-    <header className="flex w-full justify-between items-center text-icons-color sticky top-0 bg-chatui-bg p-2 px-3 z-1221">
+    <header className="flex w-full justify-between items-center text-icon sticky top-0 bg-bg-chat p-2 px-3 z-1221">
       <div className="flex items-center justify-center gap-3">
         {/* back */}
         <div
@@ -53,7 +53,7 @@ const UserSettingsHeaderConstructor: FC<IUserSettingsHeaderConstructor> = ({
         >
           <ArrowLeft size={22} />
         </div>
-        <h1 className="text-default-text-color font-medium text-xl">
+        <h1 className="text-text-default font-medium text-xl">
           {t(title)}
         </h1>
       </div>
@@ -107,9 +107,9 @@ const UserSettingsHeaderConstructor: FC<IUserSettingsHeaderConstructor> = ({
             children={
               <div
                 onClick={handleClick}
-                className="flex items-center justify-start hover:bg-actions-popup-hover p-2 px-3 rounded-[10px] duration-500 w-full gap-2"
+                className="flex items-center justify-start hover:bg-hover-action p-2 px-3 rounded-[10px] duration-500 w-full gap-2"
               >
-                <LogOut className="text-icons-color" size={19} />
+                <LogOut className="text-icon" size={19} />
                 <p className="text-[.95rem]">{t("settings.logout")}</p>
               </div>
             }

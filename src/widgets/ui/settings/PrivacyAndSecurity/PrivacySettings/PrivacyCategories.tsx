@@ -61,23 +61,23 @@ const PrivacyCategories: FC<Props> = ({
             }
           }}
           key={i}
-          className={`relative overflow-hidden hover:bg-checkbox-hover rounded-2xl px-5 py-1.5 flex items-center justify-start gap-5 cursor-pointer w-full`}
+          className={`relative overflow-hidden hover:bg-hover-checkbox rounded-2xl px-5 py-1.5 flex items-center justify-start gap-5 cursor-pointer w-full`}
         >
           {el.icon}
           <div className="flex flex-col items-start justify-between w-full">
             <p>{t(el.title)}</p>
             {el.isCloudPassword ? (
-              <p className="text-icons-color text-[.9rem]">
+              <p className="text-icon text-[.9rem]">
                 {cloudPassword
                   ? t("settings.privacyAndSecurity.enabled")
                   : t("settings.privacyAndSecurity.disabled")}
               </p>
             ) : el.isLinkEmail ? (
-              <p className="text-icons-color text-[.9rem]">
+              <p className="text-icon text-[.9rem]">
                 {email ? email : t("settings.privacyAndSecurity.notLinked")}
               </p>
             ) : (
-              <p className="text-icons-color text-[.9rem]">
+              <p className="text-icon text-[.9rem]">
                 {t("settings.privacyAndSecurity.blockedUsers")}: {blockedUsers}
               </p>
             )}
@@ -97,7 +97,7 @@ const PrivacyCategories: FC<Props> = ({
           >
             <div
               onClick={handleClick}
-              className="flex items-center justify-start hover:bg-actions-popup-hover p-2 px-3 rounded-[10px] duration-500 w-full gap-2"
+              className="flex items-center justify-start hover:bg-hover-action p-2 px-3 rounded-[10px] duration-500 w-full gap-2"
             >
               <CircleOff size={19} />
               <p>{t("settings.privacyAndSecurity.disableCloudPassword")}</p>

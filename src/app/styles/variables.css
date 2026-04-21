@@ -1,0 +1,92 @@
+:root {
+  /* fonts */
+  --font-main: "DMSans", sans-serif;
+
+  /* base colors */
+  --color-primary: #8166fa;
+  --color-secondary: #947cff;
+
+  /* backgrounds */
+  --bg-main: color-mix(in srgb, var(--color-primary) 2%, #000000);
+  --bg-chat: #212121;
+  --bg-chat-active: #766AC8;
+  --bg-file: #3993fb;
+  --bg-rect: color-mix(in srgb, var(--color-primary) 1%, transparent);
+  --bg-modal: #00000035;
+  --bg-shadow: #21212199;
+
+  /* buttons */
+  --btn-accent-bg: color-mix(in srgb, var(--color-primary) 70%, #000000);
+  --btn-main-bg: color-mix(in srgb, var(--color-primary) 1%, transparent);
+  --btn-text: color-mix(in srgb, var(--color-primary) 25%, #ffffff);
+
+  /* text */
+  --text-main: color-mix(in srgb, var(--color-primary) 25%, #ffffff);
+  --text-sub: color-mix(in srgb, var(--color-primary) 35%, #ffffff80);
+  --text-default: #ffffff;
+  --text-time: rgba(104, 108, 114, 0.75);
+  --text-time-my: rgba(255, 255, 255, 0.533);
+
+  /* borders & lines */
+  --border-rect: color-mix(in srgb, var(--color-primary) 8%, #ffffff01);
+  --border-checkbox: #ffffff40;
+  --line: #ffffff20;
+
+  /* ui elements */
+  --hover-action: #00000030;
+  --hover-checkbox: #ffffff05;
+  --scrollbar: #ffffff10;
+  --ripple: #ffffff30;
+
+  /* inputs */
+  --input-ring: #ffffff07;
+  --input-placeholder: rgb(162, 172, 180);
+  --icon: #818181;
+  --icon-input: #818181;
+
+  /* chat */
+  --bg-chat-accent: var(--color-primary);
+}
+
+:root[data-theme="light"] {
+  /* base colors */
+  --color-primary: #8166fa;
+  --color-secondary: #947cff;
+
+  /* backgrounds */
+  --bg-main: color-mix(in srgb, var(--color-primary) 3%, #ffffff);
+  --bg-chat: #ffffff;
+  --bg-chat-active: #766AC8;
+  --bg-file: var(--color-primary);
+  --bg-modal: #ffffff35;
+  --bg-shadow: #ffffff30;
+
+  /* buttons */
+  --btn-accent-bg: color-mix(in srgb, var(--color-primary) 85%, #000000);
+
+  /* text */
+  --text-main: color-mix(in srgb, var(--color-primary) 18%, #000000);
+  --text-sub: color-mix(in srgb, var(--color-primary) 25%, #00000080);
+  --text-default: #000000;
+  --text-time: rgba(104, 108, 114, 0.75);
+  --text-time-my: rgb(79, 174, 78);
+
+  /* ui elements */
+  --hover-action: #00000010;
+  --hover-checkbox: #00000008;
+  --scrollbar: #00000010;
+  --ripple: #00000030;
+
+  /* inputs */
+  --input-ring: #00000010;
+  --input-placeholder: #00000050;
+  --icon: #777777;
+  --icon-input: #b6b5b5;
+
+  /* borders & lines */
+  --border-checkbox: #00000040;
+  --line: #e7e6e690;
+
+  /* chat */
+  --bg-chat-accent: rgb(238, 255, 222);
+}

@@ -111,17 +111,17 @@ const Chat = () => {
       onDragStart={(e) => handleOnDragStart(e)}
       onDragOver={(e) => handleOnDragStart(e)}
       onDragLeave={(e) => handleOnDragLeave(e)}
-      className="flex flex-col items-center justify-between h-screen w-full text-default-text-color relative"
+      className="flex flex-col items-center justify-between h-screen w-full text-text-default relative"
     >
       <div
         onClick={handleOpenProfile}
-        className="flex w-full items-center justify-between bg-chatui-bg p-1.5 px-3 cursor-pointer"
+        className="flex w-full items-center justify-between bg-bg-chat p-1.5 px-3 cursor-pointer"
       >
         <ChatUserInfo member={otherMember} />
 
         <div
           onClick={toggleUserActionsMenu}
-          className="iconHoverEffect text-icons-color"
+          className="iconHoverEffect text-icon"
         >
           <EllipsisVertical size={22} />
         </div>

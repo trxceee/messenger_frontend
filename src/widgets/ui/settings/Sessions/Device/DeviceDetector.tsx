@@ -49,7 +49,7 @@ const DeviceDetector: FC<Props> = ({
       className={`flex items-center justify-start w-full gap-4 px-3 ${
         isMySession
           ? ""
-          : "cursor-pointer hover:bg-checkbox-hover rounded-2xl py-2"
+          : "cursor-pointer hover:bg-hover-checkbox rounded-2xl py-2"
       }`}
     >
       {/* icon */}
@@ -62,7 +62,7 @@ const DeviceDetector: FC<Props> = ({
         <p>
           {appConfig.NAME()} {appConfig.TYPE_APP()} {appConfig.VERSION()}, {os}
         </p>
-        <p className="text-icons-color text-[.85rem]">
+        <p className="text-icon text-[.85rem]">
           {isMySession && "-"} {city}, {country}
         </p>
       </div>
@@ -71,7 +71,7 @@ const DeviceDetector: FC<Props> = ({
           <ShadowWrapper
             position={position}
             children={
-              <div onClick={handleClick} className="flex items-center justify-start hover:bg-actions-popup-hover p-2 px-3 rounded-[10px] duration-500 w-full gap-2 text-myred">
+              <div onClick={handleClick} className="flex items-center justify-start hover:bg-hover-action p-2 px-3 rounded-[10px] duration-500 w-full gap-2 text-myred">
                 <CircleMinus size={19} />
                 <p>{t("settings.sessionSettings.terminate")}</p>
               </div>

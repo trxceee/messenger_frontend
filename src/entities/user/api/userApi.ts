@@ -133,7 +133,7 @@ export const userApi = mainApi.injectEndpoints({
       query: ({ field, whoCanSee }) => ({
         url: "/account/visibility",
         body: { field, whoCanSee },
-        method: "POST",
+        method: "PATCH",
       }),
       invalidatesTags: ["users"],
     }),

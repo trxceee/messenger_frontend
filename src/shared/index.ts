@@ -33,7 +33,6 @@ export {
   CheckboxDefault,
   CirclePopup,
   Spinner,
-  DefaultButton,
   appNotification,
   ShadowWrapper,
   MyEmojiPicker,

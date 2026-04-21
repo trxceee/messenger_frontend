@@ -24,7 +24,7 @@ const ActionPopup: FC<Props> = ({ position, chatId, setIsOpen }) => {
           handleDeleteChat(chatId);
           setIsOpen(false)
         }}
-        className="flex items-center justify-start hover:bg-actions-popup-hover p-2 px-3 rounded-[10px] duration-500 w-full gap-2 text-myred"
+        className="flex items-center justify-start hover:bg-hover-action p-2 px-3 rounded-[10px] duration-500 w-full gap-2 text-myred"
       >
         <Trash size={19} />
         <p className="text-[.95rem]">{t("chat.deleteChat")}</p>

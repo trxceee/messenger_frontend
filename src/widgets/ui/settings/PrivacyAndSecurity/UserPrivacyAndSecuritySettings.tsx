@@ -14,7 +14,7 @@ interface IUserPrivacyAndSecuritySettings {
 const UserPrivacyAndSecuritySettings: FC<IUserPrivacyAndSecuritySettings> = ({data}) => {
 
   return (
-    <div className="z-1233 flex flex-col items-center justify-start h-screen overflow-y-auto text-default-text-color scrollbar-thin w-full">
+    <div className="z-1233 flex flex-col items-center justify-start h-screen overflow-y-auto text-text-default scrollbar-thin w-full">
       <motion.div
         exit={{ opacity: 0, scale: 0.8, x: -300 }}
         initial={{ opacity: 0, scale: 0.8, x: -300 }}

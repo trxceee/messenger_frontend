@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { AppInput } from "@/shared";
+import { AppInput, Button } from "@/shared";
 import { useState } from "react";
 import { handleSetEmail } from "@/entities";
 
@@ -22,13 +22,12 @@ const SetEmail = () => {
         placeholder={t("settings.privacyAndSecurity.linkEmailInputPlaceholder")}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <button
+      <Button
+        buttonType="primary"
         type="submit"
-        className="flex w-full bg-accent/80 p-3 rounded-xl py-3 cursor-pointer hover:opacity-80 duration-500 text-[.9rem] items-center justify-center border border-white/20"
-      >
-        <p>{t("settings.privacyAndSecurity.linkEmailToAccount")}</p>
-      </button>
-      <p className="text-icons-color text-[.8rem]">
+        text={t("settings.privacyAndSecurity.linkEmailToAccount")}
+      />
+      <p className="text-icon text-[.8rem]">
         {t("settings.privacyAndSecurity.linkEmailSubtext")}
       </p>
     </form>

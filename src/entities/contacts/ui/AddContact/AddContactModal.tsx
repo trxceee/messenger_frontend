@@ -41,7 +41,7 @@ const AddContactModal: FC<Props> = ({
       layout
       transition={{ duration: 0.2 }}
       onClick={(e) => e.stopPropagation()}
-      className="flex flex-col items-center justify-center bg-modal-bg rounded-3xl w-full max-w-100 p-7 gap-5 shadow-[0_0px_20px_-8px_rgba(0,0,0,0.8)] backdrop-blur-xl"
+      className="flex flex-col items-center justify-center bg-bg-modal rounded-3xl w-full max-w-100 p-7 gap-5 shadow-[0_0px_20px_-8px_rgba(0,0,0,0.8)] backdrop-blur-xl"
     >
       {/* info */}
       <div className="flex w-full items-center justify-start gap-4">
@@ -50,7 +50,7 @@ const AddContactModal: FC<Props> = ({
           <p className="text-xl">
             {firstName} {lastName}
           </p>
-          <p className="text-xl text-[.95rem] text-icons-color">@{username}</p>
+          <p className="text-xl text-[.95rem] text-icon">@{username}</p>
         </div>
       </div>
 

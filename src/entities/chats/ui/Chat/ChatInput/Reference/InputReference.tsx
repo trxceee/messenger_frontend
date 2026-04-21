@@ -63,7 +63,7 @@ const InputReference: FC<Props> = ({ setValue, value }) => {
     <div className="flex w-full items-center justify-between gap-3">
       <Smile
         onClick={() => setIsOpen((prev) => !prev)}
-        className="text-input-icons-color cursor-pointer hover:text-accent duration-300"
+        className="text-icon-input cursor-pointer hover:text-accent duration-300"
       />
 
       <div className="w-full relative">
@@ -75,7 +75,7 @@ const InputReference: FC<Props> = ({ setValue, value }) => {
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: 30, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="absolute left-0 top-0 origin-left pointer-events-none text-app-inputs-placeholder"
+              className="absolute left-0 top-0 origin-left pointer-events-none text-input-placeholder"
             >
               {t("chat.messagePlaceholder")}
             </motion.label>
@@ -95,7 +95,7 @@ const InputReference: FC<Props> = ({ setValue, value }) => {
       </div>
 
       <Paperclip
-        className="text-input-icons-color cursor-pointer hover:text-accent duration-300"
+        className="text-icon-input cursor-pointer hover:text-accent duration-300"
         onClick={handleAddFile}
       />
       <input type="file" className="hidden" ref={inputRef} onChange={handleChangeFile} />

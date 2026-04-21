@@ -44,9 +44,9 @@ const SetBirthday: FC<
       }}
     >
       <div className="relative w-full" onClick={handleClickRef}>
-        <div className="relative hover:bg-checkbox-hover rounded-2xl px-5 py-4 flex items-center justify-start gap-5 cursor-pointer w-full">
-          <Gift className="text-icons-color" />
-          <p className="pointer-events-none text-default-text-color">
+        <div className="relative hover:bg-hover-checkbox rounded-2xl px-5 py-4 flex items-center justify-start gap-5 cursor-pointer w-full">
+          <Gift className="text-icon" />
+          <p className="pointer-events-none text-text-default">
             {birthday
               ? new Date(birthday).toLocaleDateString("ru-RU")
               : t("profile.birthday")}
@@ -72,7 +72,7 @@ const SetBirthday: FC<
           >
             <div
               onClick={handleClick}
-              className="flex items-center justify-start hover:bg-actions-popup-hover p-2 px-3 rounded-[10px] duration-500 w-full gap-2"
+              className="flex items-center justify-start hover:bg-hover-action p-2 px-3 rounded-[10px] duration-500 w-full gap-2"
             >
               <BrushCleaning className="text-myred" size={19} />
               <p>{t("settings.editProfileSettings.removeDateOfBirth")}</p>

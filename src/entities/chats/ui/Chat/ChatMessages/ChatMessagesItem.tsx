@@ -38,7 +38,7 @@ const ChatMessagesItem: FC<Props> = ({ isMy, message, createdAt, attachments }) 
   ) ?? [];
 
   return (
-    <div className={`flex text-default-text-color w-full ${isMy ? "justify-end" : "justify-start"}`}>
+    <div className={`flex text-text-default w-full ${isMy ? "justify-end" : "justify-start"}`}>
       <div className={`flex flex-col w-full ${isMy ? "items-end" : "items-start"} gap-2`}>
 
         {imageUrls.length > 0 && (
@@ -47,7 +47,7 @@ const ChatMessagesItem: FC<Props> = ({ isMy, message, createdAt, attachments }) 
 
         {nonImageAttachments.length > 0 && (
           <div
-            className={`messageItemWrapper ${isMy ? "rounded-2xl bg-accent-chat-bg-color" : "rounded-2xl bg-chatui-bg"} ${isMy ? "items-end" : "items-start"} gap-2`}
+            className={`messageItemWrapper ${isMy ? "rounded-2xl bg-bg-chat-accent" : "rounded-2xl bg-bg-chat"} ${isMy ? "items-end" : "items-start"} gap-2`}
           >
             {nonImageAttachments.map((file, index) => (
               <FileRender
@@ -63,7 +63,7 @@ const ChatMessagesItem: FC<Props> = ({ isMy, message, createdAt, attachments }) 
 
         <div
           onContextMenu={handleOnClick}
-          className={`messageItemWrapper relative ${isMy ? "rounded-bl-2xl bg-accent-chat-bg-color" : "rounded-br-2xl bg-chatui-bg"} ${isMy ? "items-end" : "items-start"}`}
+          className={`messageItemWrapper relative ${isMy ? "rounded-bl-2xl bg-bg-chat-accent" : "rounded-br-2xl bg-bg-chat"} ${isMy ? "items-end" : "items-start"}`}
         >
           <p>{message.text}</p>
           <MessageStats createdAt={createdAt} isMy={isMy} message={message} />
@@ -83,7 +83,7 @@ const MessageStats: FC<Props> = ({ createdAt, isMy, message }) => {
   const t = useTranslations();
 
   return (
-    <div className={`flex w-full gap-1 items-center justify-end ${!isMy ? "text-message-time-color" : "text-my-message-time-color"}`}>
+    <div className={`flex w-full gap-1 items-center justify-end ${!isMy ? "text-text-time" : "text-text-time-my"}`}>
       {!!message.editedAt && (
         <p className="text-[.75rem] shrink-0">{t("chat.isEdited")}</p>
       )}

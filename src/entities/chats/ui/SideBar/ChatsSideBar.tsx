@@ -59,12 +59,21 @@ const ChatsSideBar: FC<Props> = ({ myDms }) => {
               setChatId(chat.id);
             }}
             userId={user.id}
-            messages={chat.messages}
+            messages={
+              chat.messages.length
+                ? [...chat.messages].sort(
+                    (a, b) =>
+                      new Date(a.createdAt).getTime() -
+                      new Date(b.createdAt).getTime(),
+                  )
+                : []
+            }
             onClick={() => handleOnClick(chat)}
             key={chat.id}
             firstName={user.firstName}
             lastName={user.lastName}
             avatar={lastAvatar}
+            chatId={chat.id}
             hasAvatar={!!user.avatars.length}
           />
         );

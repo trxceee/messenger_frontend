@@ -37,7 +37,7 @@ const FileRender: FC<Props> = ({
     >
       <div
         onClick={handleDownload}
-        className="group w-14 h-14 rounded-xl bg-file-bg cursor-pointer hover:opacity-90 duration-300 flex items-center justify-center truncate relative overflow-hidden"
+        className="group w-14 h-14 rounded-xl bg-bg-file cursor-pointer hover:opacity-90 duration-300 flex items-center justify-center truncate relative overflow-hidden"
       >
         <p className="text-sm text-white transition-opacity duration-300 group-hover:opacity-0">
           {fileExt}
@@ -48,10 +48,10 @@ const FileRender: FC<Props> = ({
         />
       </div>
       <div className="flex flex-col items-start justify-center min-w-0 overflow-hidden">
-        <p className="text-default-text-color truncate w-full max-w-45">
+        <p className="text-text-default truncate w-full max-w-45">
           {fileName}
         </p>
-        <p className="text-default-text-color/50 text-sm">
+        <p className="text-text-default/50 text-sm">
           {sizeFile.size}
           {sizeFile.unit === "MB" ? t("chat.mb") : t("chat.kb")}
         </p>

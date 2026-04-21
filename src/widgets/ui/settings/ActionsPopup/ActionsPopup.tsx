@@ -28,7 +28,7 @@ const ActionsPopup: FC<IActionsPopup> = ({ data }) => {
       {/* user short info */}
       <div
         onClick={() => dispatch(openComponent("myProfile"))}
-        className="flex items-center w-full gap-3 cursor-pointer hover:bg-actions-popup-hover p-2 rounded-[10px] duration-300"
+        className="flex items-center w-full gap-3 cursor-pointer hover:bg-hover-action p-2 rounded-[10px] duration-300"
       >
         <RenderAvatarElement
           hasAvatar={!!data.avatars.length}
@@ -53,7 +53,7 @@ const ActionsPopup: FC<IActionsPopup> = ({ data }) => {
         <ActionsElement key={i} {...el} />
       ))}
 
-      <p className="text-[.8rem] text-icons-color">
+      <p className="text-[.8rem] text-icon">
         {appConfig.NAME()} {appConfig.TYPE_APP()} {appConfig.VERSION()}
       </p>
     </motion.div>

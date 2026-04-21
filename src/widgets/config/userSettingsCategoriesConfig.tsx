@@ -10,28 +10,28 @@ import {
 
 export const userSettingsCategoriesConfig = (dispatch: AppDispatch) => [
   {
-    icon: <Settings className="text-icons-color shrink-0" size={26} />,
+    icon: <Settings className="text-icon shrink-0" size={26} />,
     title: "settings.generalSettings.title",
     onClick: () => dispatch(openComponent("userSettingsGeneral")),
   },
   {
-    icon: <MonitorSmartphone className="text-icons-color shrink-0" size={26} />,
+    icon: <MonitorSmartphone className="text-icon shrink-0" size={26} />,
     title: "settings.sessionSettings.title",
     onClick: () => dispatch(openComponent("userSettingsSessions")),
   },
   {
-    icon: <BrickWallShield className="text-icons-color shrink-0" size={26} />,
+    icon: <BrickWallShield className="text-icon shrink-0" size={26} />,
     title: "settings.privacyAndSecurity.title",
     onClick: () => dispatch(openComponent("userSettingsPrivacy")),
   },
   {
-    icon: <Languages className="text-icons-color shrink-0" size={26} />,
+    icon: <Languages className="text-icon shrink-0" size={26} />,
     title: "settings.languageSettings.title",
     onClick: () => dispatch(openComponent("userSettingsLanguage")),
     isLanguage: true,
   },
   {
-    icon: <Workflow className="text-icons-color shrink-0" size={26} />,
+    icon: <Workflow className="text-icon shrink-0" size={26} />,
     title: "settings.otherSettings.title",
     onClick: () => dispatch(openComponent("userSettingsOther")),
   },

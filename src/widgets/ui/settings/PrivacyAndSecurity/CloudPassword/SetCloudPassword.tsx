@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { AppInput, UserSettingsHeaderConstructor } from "@/shared";
+import { AppInput, Button, UserSettingsHeaderConstructor } from "@/shared";
 import { useState } from "react";
 import { handleSetPassword } from "@/entities";
 
@@ -17,7 +17,7 @@ const SetCloudPassword = () => {
   });
 
   return (
-    <div className="z-1233 flex flex-col items-center justify-start h-screen overflow-y-auto text-default-text-color scrollbar-thin w-full">
+    <div className="z-1233 flex flex-col items-center justify-start h-screen overflow-y-auto text-text-default scrollbar-thin w-full">
       <motion.div
         exit={{ opacity: 0, scale: 0.8, x: -300 }}
         initial={{ opacity: 0, scale: 0.8, x: -300 }}
@@ -55,17 +55,16 @@ const SetCloudPassword = () => {
                 }))
               }
             />
-            <button
+            <Button
+              buttonType="primary"
               onClick={async () =>
                 await handleSetPassword({
                   confirmPassword: passwords.confirmPassword,
                   password: passwords.password,
                 })
               }
-              className="flex w-full bg-accent/80 p-3 rounded-xl py-3 cursor-pointer hover:opacity-80 duration-500 text-[.9rem] items-center justify-center border border-white/20"
-            >
-              <p>{t("settings.privacyAndSecurity.cloudPasswordCreate")}</p>
-            </button>
+              text={t("settings.privacyAndSecurity.cloudPasswordCreate")}
+            />
             <p className="text-white/50 text-[.8rem]">
               {t("settings.privacyAndSecurity.createCloudPasswordSubtext")}
             </p>

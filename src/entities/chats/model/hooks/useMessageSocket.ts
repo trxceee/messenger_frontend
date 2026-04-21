@@ -37,6 +37,8 @@ export function useMessageSocket(userId: string) {
     const socket = useSocketConnection(userId);
 
     const handleAddMessage = (message: Message) => {
+      console.log("📨 message received:", message.id, message.text);
+
       const isValidUser = message.senderId !== userId;
       const isInCurrentChat = currentChatRef.current?.id === message.chatId;
       if (message.isBlocked && message.senderId !== userId) return;

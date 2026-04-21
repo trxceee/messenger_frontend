@@ -15,7 +15,7 @@ const NotificationStructure: FC<INotificationStructure> = ({ content }) => {
     <div className="flex items-center justify-start space-x-2">
       <div className="flex flex-col items-start justify-start">
         <p className="text-white text-[.9rem]">{t('notify.title')}!</p>
-        <p className="text-[.8rem] text-text/70 leading-4.5">{content}</p>
+        <p className="text-[.8rem] text-text-main/70 leading-4.5">{content}</p>
       </div>
     </div>
   );

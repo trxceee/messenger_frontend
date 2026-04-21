@@ -14,7 +14,7 @@ const UserGeneralSettings = () => {
   const currentTheme = useAppSelector(getCurrentTheme);
 
   return (
-    <div className="z-1233 flex flex-col items-center justify-start h-screen overflow-y-auto text-default-text-color scrollbar-thin w-full">
+    <div className="z-1233 flex flex-col items-center justify-start h-screen overflow-y-auto text-text-default scrollbar-thin w-full">
       <motion.div
         exit={{ opacity: 0, scale: 0.8, x: -300 }}
         initial={{ opacity: 0, scale: 0.8, x: -300 }}
@@ -29,7 +29,7 @@ const UserGeneralSettings = () => {
         />
         <div className="flex flex-col items-start justify-center w-full p-2 px-3 gap-3">
           <div className="w-full flex flex-col items-start justify-center gap-3">
-            <p className="text-icons-color text-md ml-5">
+            <p className="text-icon text-md ml-5">
               {t("settings.generalSettings.theme")}
             </p>
             <div className="flex flex-col items-center justify-center w-full">

@@ -13,7 +13,7 @@ export const messagePopupElements = (
   socket: Socket,
 ): Array<ReturnedTypesActionsElement> => [
   {
-    icon: <Pencil size={20} className="text-icons-color" />,
+    icon: <Pencil size={20} className="text-icon" />,
     title: "chat.editMsg",
     isMain: true,
     isFirst: true,

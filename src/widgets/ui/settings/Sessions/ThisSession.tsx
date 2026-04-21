@@ -24,7 +24,7 @@ const ThisSession: FC<Props> = ({
 
   return (
     <div className="flex flex-col gap-3 w-full">
-      <p className="text-icons-color text-md">
+      <p className="text-icon text-md">
         {t("settings.sessionSettings.thisDevice").toUpperCase()}
       </p>
       <DeviceDetector
@@ -40,7 +40,7 @@ const ThisSession: FC<Props> = ({
           createRipple(e);
           await handleClearAllSessionsWithoutMy();
         }}
-        className="relative overflow-hidden hover:bg-checkbox-hover rounded-2xl px-5 py-3 flex items-center justify-start gap-5 cursor-pointer w-full text-myred"
+        className="relative overflow-hidden hover:bg-hover-checkbox rounded-2xl px-5 py-3 flex items-center justify-start gap-5 cursor-pointer w-full text-myred"
       >
         <CircleMinus />
         <p>{t("settings.sessionSettings.terminateAllOther")}</p>

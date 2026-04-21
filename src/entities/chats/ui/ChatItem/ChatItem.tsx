@@ -3,7 +3,7 @@
 import { useAppSelector } from "@/app";
 import { createRipple } from "@/shared";
 import { FC, MouseEvent } from "react";
-import { Message } from "../../model";
+import { getCurrentChat, Message } from "../../model";
 import { getListIgnoredUsers, getMyData } from "@/entities/user";
 import ItemUserInfo from "./ItemUserInfo";
 import { useFormattedChatDate } from "../../lib";
@@ -18,6 +18,7 @@ interface Props {
   onClick: () => void;
   onContextMenu: (e: MouseEvent<HTMLDivElement>) => void;
   userId: string;
+  chatId: string;
 }
 
 const ChatItem: FC<Props> = ({
@@ -29,8 +30,9 @@ const ChatItem: FC<Props> = ({
   onClick,
   onContextMenu,
   userId,
+  chatId,
 }) => {
-  const myUserId = useAppSelector(getMyData).id ?? '';
+  const myUserId = useAppSelector(getMyData).id ?? "";
   const lastMessage = messages.at(-1);
   const noReadMessages = messages.filter(
     (msg) => msg.senderId !== myUserId && !msg.isRead,
@@ -39,6 +41,8 @@ const ChatItem: FC<Props> = ({
     new Date(lastMessage?.createdAt ?? new Date()).getTime() ?? 0,
   );
   const isIgnoreOppent = useAppSelector(getListIgnoredUsers).includes(userId);
+  const currentChat = useAppSelector(getCurrentChat);
+  const isCurrentChat = currentChat?.id === chatId;
 
   return (
     <div
@@ -49,7 +53,8 @@ const ChatItem: FC<Props> = ({
         e.preventDefault();
         onContextMenu(e);
       }}
-      className={`flex w-full items-center justify-between cursor-pointer relative hover:bg-checkbox-hover rounded-2xl p-2.5 overflow-hidden text-default-text-color`}
+      className={`flex w-full items-start justify-between cursor-pointer relative rounded-2xl p-2.5 overflow-hidden text-text-default gap-3
+        ${isCurrentChat ? "bg-bg-chat-active" : "hover:bg-hover-checkbox"}`}
     >
       <div className="flex-1 min-w-0">
         <ItemUserInfo
@@ -59,27 +64,23 @@ const ChatItem: FC<Props> = ({
           lastName={lastName}
           lastMessage={lastMessage}
           userId={userId}
+          isCurrentChat={isCurrentChat}
+          isIgnoreOppent={isIgnoreOppent}
         />
       </div>
 
-      {!isIgnoreOppent ? (
-        <div className="flex flex-col items-end justify-center gap-2 shrink-0 absolute right-2.5 top-2.5">
-          {messages.length ? (
-            <p className="text-icons-color text-[.65rem]">
-              {formattedCreatedTime}
-            </p>
-          ) : null}
-          {noReadMessages.length ? (
-            <p className="flex text-white items-center justify-center rounded-full bg-accent p-[1.5px] px-2 text-[.85rem]">
-              {noReadMessages.length}
-            </p>
-          ) : null}
-        </div>
-      ) : (
-        <div className="items-center justify-center p-2.5 bg-checkbox-hover rounded-lg">
-          <VolumeOff size={20} className="text-icons-color" />
-        </div>
-      )}
+      <div className="flex flex-col items-end justify-center gap-2 shrink-0 text-white">
+        {messages.length ? (
+          <p className={`${!isCurrentChat && "text-icon"} text-[.65rem]`}>
+            {formattedCreatedTime}
+          </p>
+        ) : null}
+        {noReadMessages.length ? (
+          <p className="flex text-white items-center justify-center rounded-full bg-accent p-[1.5px] px-2 text-[.85rem]">
+            {noReadMessages.length}
+          </p>
+        ) : null}
+      </div>
     </div>
   );
 };

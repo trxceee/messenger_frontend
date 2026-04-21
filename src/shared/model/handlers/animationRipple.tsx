@@ -13,7 +13,7 @@ export const createRipple = (e: MouseEvent<HTMLDivElement>) => {
   circle.style.left = `${x}px`;
   circle.style.top = `${y}px`;
   circle.className =
-    "absolute bg-ripple-bg rounded-full pointer-events-none ripple";
+    "absolute bg-ripple rounded-full pointer-events-none ripple";
 
   button.appendChild(circle);
 

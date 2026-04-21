@@ -4,7 +4,6 @@ import { SignUpType } from "@/entities";
 import { handleRegisterUser, schemaSignUp } from "@/features";
 import {
   Button,
-  DefaultButton,
   DefaultInput,
   FieldInput,
   isErrorWithMessageAndType,
@@ -16,7 +15,6 @@ import { useTranslations } from "next-intl";
 import { useParams, useRouter } from "next/navigation";
 import { Dispatch, FC, SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
-import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 
 interface IRegisterFormNumber {
@@ -113,19 +111,21 @@ const RegisterFormNumber: FC<IRegisterFormNumber> = ({ setIsVisible }) => {
       <div className="flex flex-col items-center text-center justify-center gap-3 w-full">
         <Button
           type="submit"
-          label={
+          buttonType="ternary"
+          text={
             !whoVisible
               ? t("buttons.buttonSendCode")
               : t("buttons.buttonContinue")
           }
           className="w-full p-2.5"
         />
-        <DefaultButton
+        <Button
           type="button"
+          buttonType="secondary"
           onClick={() => router.back()}
           text={t("buttons.buttonBack")}
         />
-        <p className="text-[.8rem] text-button-text-color/50">
+        <p className="text-[.8rem] text-btn-text/50">
           {t("register.agreeWith")}{" "}
           <Link
             href={`/${params.locale}/terms`}

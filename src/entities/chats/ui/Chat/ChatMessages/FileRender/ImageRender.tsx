@@ -71,7 +71,7 @@ const ImageRender: FC<Props> = ({ images, isMy }) => {
       style={{
         gap: "2px",
       }}
-      className={`flex flex-col rounded-2xl ${isMy ? "bg-accent-chat-bg-color" : "bg-chatui-bg"} overflow-hidden`}
+      className={`flex flex-col rounded-2xl ${isMy ? "bg-bg-chat-accent" : "bg-bg-chat"} overflow-hidden`}
     >
       {rows.map((count, i) => {
         const rowImages = images.slice(startSlice, startSlice + count);

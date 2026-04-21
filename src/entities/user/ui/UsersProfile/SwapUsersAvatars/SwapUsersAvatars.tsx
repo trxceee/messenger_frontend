@@ -86,7 +86,7 @@ const SwapUsersAvatars: FC<Props> = ({
             <p className="text-xl">
               {firstName} {lastName}
             </p>
-            <p className="text-icons-color text-[.85rem]">{isOnline ? t('settings.online') : lastSeenDate}</p>
+            <p className="text-icon text-[.85rem]">{isOnline ? t('settings.online') : lastSeenDate}</p>
           </motion.div>
         </motion.div>
       ) : (
@@ -104,7 +104,7 @@ const SwapUsersAvatars: FC<Props> = ({
             <p className="text-xl">
               {firstName} {lastName}
             </p>
-            <p className="text-icons-color text-[.85rem]">{isOnline ? t('settings.online') : lastSeenDate}</p>
+            <p className="text-icon text-[.85rem]">{isOnline ? t('settings.online') : lastSeenDate}</p>
           </div>
         </div>
       )}

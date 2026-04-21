@@ -32,7 +32,7 @@ const VisibilitySettings: FC<Props> = ({
   };
 
   return (
-    <div className="z-1233 flex flex-col h-screen text-default-text-color w-full">
+    <div className="z-1233 flex flex-col h-screen text-text-default w-full">
       <motion.div
         exit={{ opacity: 0, scale: 0.8, x: -300 }}
         initial={{ opacity: 0, scale: 0.8, x: -300 }}
@@ -47,7 +47,7 @@ const VisibilitySettings: FC<Props> = ({
         />
 
         <div className="flex flex-col gap-1 px-3">
-          <p className="text-icons-color ml-5">
+          <p className="text-icon ml-5">
             {t(`settings.privacyAndSecurity.privacyWhoCanSee.${field}`)}
           </p>
 

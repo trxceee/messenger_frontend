@@ -29,7 +29,7 @@ const UserProfileLastAvatars: FC<IUserProfileLastAvatars> = ({ avataras, setOpen
 
   return (
     <div className="flex flex-col items-start justify-center gap-3 w-full p-2">
-      <p className="text-[.9rem] text-icons-color">
+      <p className="text-[.9rem] text-icon">
         {t("profile.lastAvatars")}:
       </p>
       <div className="grid gap-1.5 grid-cols-[repeat(auto-fill,minmax(80px,1fr))]">
@@ -68,7 +68,7 @@ const UserProfileLastAvatars: FC<IUserProfileLastAvatars> = ({ avataras, setOpen
             >
               <div
                 onClick={handleClick}
-                className="flex items-center justify-start hover:bg-actions-popup-hover p-2 px-3 rounded-[10px] duration-500 w-full gap-2 text-myred"
+                className="flex items-center justify-start hover:bg-hover-action p-2 px-3 rounded-[10px] duration-500 w-full gap-2 text-myred"
               >
                 <CircleMinus size={19} />
                 <p>{t("profile.removeAvatar")}</p>

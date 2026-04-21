@@ -88,7 +88,7 @@ const Menu = () => {
       {!isFullScreenChat && (
         <div
           style={{ width }}
-          className={`items-center justify-center w-full h-screen bg-chatui-bg relative flex shrink-0`}
+          className={`items-center justify-center w-full h-screen bg-bg-chat relative flex shrink-0`}
         >
           <AnimatePresence>
             <MenuCompoonent data={data} />
@@ -96,7 +96,7 @@ const Menu = () => {
 
           <div
             onMouseDown={() => (isResizing.current = true)}
-            className="w-0.5 bg-line-color self-stretch cursor-e-resize"
+            className="w-0.5 bg-line self-stretch cursor-e-resize"
           ></div>
         </div>
       )}

@@ -1,107 +1,48 @@
 @import "tailwindcss";
-
-:root {
-  --ff-main: "DMSans", sans-serif;
-  --accent-color: #8166fa;
-  --accent-button-color: color-mix(in srgb, var(--accent-color) 70%, #000000);
-  --background-color: color-mix(in srgb, var(--accent-color) 2%, #000000);
-  --rect-background-color: color-mix(
-    in srgb,
-    var(--accent-color) 1%,
-    transparent
-  );
-  --rect-border-color: color-mix(in srgb, var(--accent-color) 8%, #ffffff01);
-  --text-color: color-mix(in srgb, var(--accent-color) 25%, #ffffff);
-  --sub-text-color: color-mix(in srgb, var(--accent-color) 35%, #ffffff80);
-  --chatui-bg: #212121;
-  --file-bg: #3993fb;
-  --actions-popup-hover: #00000030;
-  --checkbox-hover: #ffffff05;
-  --shadow-wrapper-bg: #21212199;
-  --inputs-ring-color: #ffffff07;
-  --icons-color: #818181;
-  --input-icons-color: #818181;
-  --app-inputs-placeholder: rgb(162, 172, 180);
-  --default-text-color: #ffffff;
-  --line-color: #ffffff20;
-  --scrollbar-color: #ffffff10;
-  --ripple-bg: #ffffff30;
-  --checkbox-border: #ffffff40;
-  --modal-bg: #00000035;
-  --accent-chat-bg-color: var(--accent-color);
-  --message-time-color: rgba(104, 108, 114, 0.75);
-  --my-message-time-color: rgba(255, 255, 255, 0.533);
-
-  --button-main-bg: color-mix(in srgb, var(--accent-color) 1%, transparent);
-  --button-text-color: color-mix(in srgb, var(--accent-color) 25%, #ffffff);
-  --message-time-color: rgba(104, 108, 114, 0.75);
-}
-
-:root[data-theme="light"] {
-  --ff-main: "DMSans", sans-serif;
-  --accent-color: #8166fa;
-  --accent-button-color: color-mix(in srgb, var(--accent-color) 85%, #000000);
-  --background-color: color-mix(in srgb, var(--accent-color) 3%, #ffffff);
-  --text-color: color-mix(in srgb, var(--accent-color) 18%, #000000);
-  --sub-text-color: color-mix(in srgb, var(--accent-color) 25%, #00000080);
-  --chatui-bg: #ffffff;
-  --file-bg: var(--accent-color);
-  --actions-popup-hover: #00000010;
-  --checkbox-hover: #00000008;
-  --shadow-wrapper-bg: #ffffff30;
-  --inputs-ring-color: #00000010;
-  --icons-color: #777777;
-  --input-icons-color: #b6b5b5;
-  --app-inputs-placeholder: #00000050;
-  --default-text-color: #000000;
-  --line-color: #e7e6e690;
-  --scrollbar-color: #00000010;
-  --ripple-bg: #00000030;
-  --checkbox-border: #00000040;
-  --modal-bg: #ffffff35;
-  --accent-chat-bg-color: rgb(238, 255, 222);
-  --my-message-time-color: rgb(79, 174, 78);
-}
+@import "../styles/variables.css";
 
 @theme inline {
-  --color-accent: var(--accent-color);
-  --color-button: var(--accent-button-color);
-  --color-text: var(--text-color);
-  --color-subtext: var(--sub-text-color);
-  --color-rect-bg: var(--rect-background-color);
-  --color-rect-boder: var(--rect-border-color);
-  --color-chatui-bg: var(--chatui-bg);
-  --color-actions-popup-hover: var(--actions-popup-hover);
-  --color-checkbox-hover: var(--checkbox-hover);
-  --color-shadow-wrapper-bg: var(--shadow-wrapper-bg);
-  --color-inputs-ring-color: var(--inputs-ring-color);
-  --color-icons-color: var(--icons-color);
-  --color-app-inputs-placeholder: var(--app-inputs-placeholder);
-  --color-default-text-color: var(--default-text-color);
-  --color-input-icons-color: var(--input-icons-color);
-  --color-line-color: var(--line-color);
-  --color-ripple-bg: var(--ripple-bg);
-  --color-checkbox-border: var(--checkbox-border);
-  --color-modal-bg: var(--modal-bg);
-  --color-button-main-bg: var(--button-main-bg);
-  --color-button-text-color: var(--button-text-color);
-  --color-accent-chat-bg-color: var(--accent-chat-bg-color);
-  --color-message-time-color: var(--message-time-color);
-  --color-my-message-time-color: var(--my-message-time-color);
-  --color-file-bg: var(--file-bg);
+  --color-accent: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-button: var(--btn-accent-bg);
+  --color-text-main: var(--text-main);
+  --color-text-sub: var(--text-sub);
+  --color-bg-rect: var(--bg-rect);
+  --color-border-rect: var(--border-rect);
+  --color-bg-chat: var(--bg-chat);
+  --color-bg-chat-active: var(--bg-chat-active);
+  --color-hover-action: var(--hover-action);
+  --color-hover-checkbox: var(--hover-checkbox);
+  --color-bg-shadow: var(--bg-shadow);
+  --color-input-ring: var(--input-ring);
+  --color-icon: var(--icon);
+  --color-input-placeholder: var(--input-placeholder);
+  --color-text-default: var(--text-default);
+  --color-icon-input: var(--icon-input);
+  --color-line: var(--line);
+  --color-ripple: var(--ripple);
+  --color-border-checkbox: var(--border-checkbox);
+  --color-bg-modal: var(--bg-modal);
+  --color-btn-main-bg: var(--btn-main-bg);
+  --color-btn-text: var(--btn-text);
+  --color-bg-chat-accent: var(--bg-chat-accent);
+  --color-text-time: var(--text-time);
+  --color-text-time-my: var(--text-time-my);
+  --color-bg-file: var(--bg-file);
   --breakpoint-otherprofile: 25rem;
   --breakpoint-resizechat: 70rem;
 }
 
+
 body {
-  background: var(--background-color);
-  color: var(--text-color);
+  background: var(--bg-main);
+  color: var(--text-main);
   overflow-x: hidden;
   user-select: none;
 }
 
 .Toastify__close-button {
-  color: var(--text-color);
+  color: var(--text-main);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -139,7 +80,7 @@ input[type="number"] {
 
 .scrollbar-thin {
   scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-color) transparent;
+  scrollbar-color: var(--scrollbar) transparent;
 }
 
 .scrollbar-thin::-webkit-scrollbar {
@@ -171,11 +112,11 @@ input[type="number"] {
 }
 
 .shadow-wrapper {
-  @apply flex flex-col fixed p-0.5 gap-1 backdrop-blur-xl bg-shadow-wrapper-bg rounded-xl text-default-text-color w-full shadow-[0_0px_20px_-8px_rgba(0,0,0,0.8)] cursor-pointer z-123123;
+  @apply flex flex-col fixed p-0.5 gap-1 backdrop-blur-xl bg-bg-shadow rounded-xl text-text-default w-full shadow-[0_0px_20px_-8px_rgba(0,0,0,0.8)] cursor-pointer z-123123;
 }
 
 .user-action-popup {
-  background: var(--chatui-bg) !important;
+  background: var(--bg-chat) !important;
 }
 
 .paddingPopup {
@@ -205,10 +146,10 @@ input[type="number"] {
 
 .marchingAntsNotActive {
   background-image:
-    linear-gradient(90deg, var(--input-icons-color) 50%, transparent 50%),
-    linear-gradient(90deg, var(--input-icons-color) 50%, transparent 50%),
-    linear-gradient(0deg, var(--input-icons-color) 50%, transparent 50%),
-    linear-gradient(0deg, var(--input-icons-color) 50%, transparent 50%);
+    linear-gradient(90deg, var(--icon-input) 50%, transparent 50%),
+    linear-gradient(90deg, var(--icon-input) 50%, transparent 50%),
+    linear-gradient(0deg, var(--icon-input) 50%, transparent 50%),
+    linear-gradient(0deg, var(--icon-input) 50%, transparent 50%);
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
   background-size:
     20px 2px,
@@ -226,10 +167,10 @@ input[type="number"] {
 
 .marchingAntsIsActive {
   background-image:
-    linear-gradient(90deg, var(--accent-color) 50%, transparent 50%),
-    linear-gradient(90deg, var(--accent-color) 50%, transparent 50%),
-    linear-gradient(0deg, var(--accent-color) 50%, transparent 50%),
-    linear-gradient(0deg, var(--accent-color) 50%, transparent 50%);
+    linear-gradient(90deg, var(--color-primary) 50%, transparent 50%),
+    linear-gradient(90deg, var(--color-primary) 50%, transparent 50%),
+    linear-gradient(0deg, var(--color-primary) 50%, transparent 50%),
+    linear-gradient(0deg, var(--color-primary) 50%, transparent 50%);
 }
 
 .marchingAntsAnimate {
@@ -237,7 +178,7 @@ input[type="number"] {
 }
 
 .iconHoverEffect {
-  @apply cursor-pointer flex p-2.5 items-center justify-center hover:bg-checkbox-hover bg-transparent rounded-full duration-300;
+  @apply cursor-pointer flex p-2.5 items-center justify-center hover:bg-hover-checkbox bg-transparent rounded-full duration-300;
 }
 
 .messageItemWrapper {

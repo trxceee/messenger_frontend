@@ -35,7 +35,7 @@ const ChatUserInfo: FC<Props> = ({ member }) => {
           e.stopPropagation();
           handleCloseCurrentChat();
         }}
-        className="resizechat:hidden flex aspect-square cursor-pointer p-2.5 items-center justify-center hover:bg-checkbox-hover bg-transparent rounded-full duration-300 text-icons-color"
+        className="resizechat:hidden flex aspect-square cursor-pointer p-2.5 items-center justify-center hover:bg-hover-checkbox bg-transparent rounded-full duration-300 text-icon"
       >
         <ArrowLeft />
       </div>
@@ -51,7 +51,7 @@ const ChatUserInfo: FC<Props> = ({ member }) => {
           <h2>
             {firstName} {lastName}
           </h2>
-          <p className="text-icons-color text-[0.85rem]">
+          <p className="text-icon text-[0.85rem]">
             {isOnline ? t("settings.online") : lastSeenFormatted}
           </p>
         </div>

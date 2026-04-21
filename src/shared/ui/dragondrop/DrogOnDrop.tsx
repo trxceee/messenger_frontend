@@ -51,10 +51,10 @@ const DrogOnDrop: FC<Props> = ({ setIsDrag }) => {
       onDragOver={(e) => handleOnDragOver(e)}
       onDragLeave={(e) => handleOnDragLeave(e)}
       onDrop={(e) => handleOnDrop(e)}
-      className="absolute inset-5 max-w-200 bg-chatui-bg rounded-2xl flex items-center justify-center flex-col mx-auto p-5"
+      className="absolute inset-5 max-w-200 bg-bg-chat rounded-2xl flex items-center justify-center flex-col mx-auto p-5"
     >
       <div
-        className={`w-full h-full marchingAntsNotActive cursor-pointer flex items-center justify-center flex-col gap-7 duration-200 ${isHover ? "marchingAntsAnimate marchingAntsIsActive text-accent" : "text-input-icons-color"}`}
+        className={`w-full h-full marchingAntsNotActive cursor-pointer flex items-center justify-center flex-col gap-7 duration-200 ${isHover ? "marchingAntsAnimate marchingAntsIsActive text-accent" : "text-icon-input"}`}
       >
         <File size={90} />
         <h1 className="text-xl">{t("chat.dragHere")}</h1>

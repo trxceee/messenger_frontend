@@ -13,7 +13,7 @@ export const userActionsMenuElements = (
   isMuted: boolean,
 ): Array<ReturnedTypesActionsElement> => [
   {
-    icon: <CircleSlash size={20} className="text-icons-color" />,
+    icon: <CircleSlash size={20} className="text-icon" />,
     title: isBlocked ? "chat.user.unblockUser" : "chat.user.blockUser",
     isMain: true,
     isFirst: true,
@@ -27,9 +27,9 @@ export const userActionsMenuElements = (
   },
   {
     icon: isMuted ? (
-      <Volume2 size={20} className="text-icons-color" />
+      <Volume2 size={20} className="text-icon" />
     ) : (
-      <VolumeOff size={20} className="text-icons-color" />
+      <VolumeOff size={20} className="text-icon" />
     ),
     title: isMuted ? "chat.user.unmuteUser" : "chat.user.muteUser",
     isMain: true,

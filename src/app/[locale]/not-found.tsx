@@ -41,12 +41,13 @@ export default function NotFoundPage() {
           <h1 className="text-7xl bg-clip-text text-transparent bg-linear-to-b from-accent/70 to-accent/20">
             {t("notFound.title")}
           </h1>
-          <p className="max-w-120 text-[.8rem] text-button-text-color/50">
+          <p className="max-w-120 text-[.8rem] text-btn-text/50">
             {t("notFound.desc")}
           </p>
         </div>
         <Button
-          label={t("buttons.buttonHome")}
+          buttonType="ternary"
+          text={t("buttons.buttonHome")}
           className="p-2.5 w-full max-w-70"
           onClick={() => router.push("/")}
         />

@@ -19,13 +19,13 @@ const UserSettingsCategories = () => {
             createRipple(e);
           }}
           key={i}
-          className="relative overflow-hidden hover:bg-checkbox-hover rounded-2xl px-5 py-4 flex items-center justify-start gap-5 cursor-pointer w-full"
+          className="relative overflow-hidden hover:bg-hover-checkbox rounded-2xl px-5 py-4 flex items-center justify-start gap-5 cursor-pointer w-full"
         >
           {el.icon}
           <div className="flex items-center justify-between w-full">
             <p>{t(el.title)}</p>
             {el.isLanguage && (
-              <p className="text-icons-color text-[.9rem]">
+              <p className="text-icon text-[.9rem]">
                 {i18nPattern(locale as TLocales).orig}
               </p>
             )}

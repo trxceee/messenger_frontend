@@ -52,11 +52,11 @@ const ChangeEmail: FC<Props> = ({ cloudPassword }) => {
 
       <button
         type="submit"
-        className="flex w-full bg-accent/80 p-3 rounded-xl py-3 cursor-pointer hover:opacity-80 duration-500 text-[.9rem] items-center justify-center border border-white/20"
+        className="flex w-full cursor-pointer hover:opacity-85 duration-500 text-[.9rem] rounded-xl bg-linear-to-b from-secondary to-accent p-3 py-3 items-center justify-center"
       >
         <p>{t("settings.privacyAndSecurity.changeEmail")}</p>
       </button>
-      <p className="text-icons-color text-[.8rem]">
+      <p className="text-icon text-[.8rem]">
         {t("settings.privacyAndSecurity.linkEmailSubtext")}
       </p>
     </form>

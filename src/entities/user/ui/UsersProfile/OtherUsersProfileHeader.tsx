@@ -28,7 +28,7 @@ const OtherUsersProfileHeader: FC<Props> = ({ username, setIsOpen }) => {
   }
 
   return (
-    <header className="flex w-full justify-between items-center text-icons-color sticky top-0 bg-chatui-bg z-123123123 p-2 px-3">
+    <header className="flex w-full justify-between items-center text-icon sticky top-0 bg-bg-chat z-123123123 p-2 px-3">
       <div className="flex items-center justify-center gap-3">
         {/* back */}
         <div
@@ -37,7 +37,7 @@ const OtherUsersProfileHeader: FC<Props> = ({ username, setIsOpen }) => {
         >
           <X size={22} />
         </div>
-        <h1 className="text-default-text-color font-medium text-xl">
+        <h1 className="text-text-default font-medium text-xl">
           {t("otherProfile.title")}
         </h1>
       </div>
