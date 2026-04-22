@@ -38,7 +38,7 @@ const ChatMessagesItem: FC<Props> = ({ isMy, message, createdAt, attachments }) 
   ) ?? [];
 
   return (
-    <div className={`flex text-text-default w-full ${isMy ? "justify-end" : "justify-start"}`}>
+    <div className={`flex text-text-default max-w-170 w-full ${isMy ? "justify-end" : "justify-start"}`}>
       <div className={`flex flex-col w-full ${isMy ? "items-end" : "items-start"} gap-2`}>
 
         {imageUrls.length > 0 && (
