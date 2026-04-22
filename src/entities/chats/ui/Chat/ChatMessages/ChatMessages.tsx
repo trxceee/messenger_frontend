@@ -16,33 +16,39 @@ const ChatMessages: FC<Props> = ({ userId }) => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const currentChat = useAppSelector(getCurrentChat);
   const containerRef = useRef<HTMLDivElement>(null);
+  const wasAtBottomRef = useRef<boolean>(true);
 
   const handleScrolBottom = (behavior: "auto" | "smooth") => {
     const el = containerRef.current;
     if (!el) return;
-    el.scrollTo({
-      top: el.scrollHeight,
-      behavior: behavior,
-    });
+    el.scrollTo({ top: el.scrollHeight, behavior });
   };
 
   useEffect(() => {
-    handleScrolBottom("auto");
-  }, [currentChat?.id]);
+    if (!currentChat?.messages.length) return;
+
+    const lastMessage = currentChat.messages.at(-1);
+    const isMyMessage = lastMessage?.senderId !== userId;
+
+    if (isMyMessage || wasAtBottomRef.current) {
+      requestAnimationFrame(() => {
+        handleScrolBottom("auto");
+      });
+    }
+  }, [currentChat?.messages.at(-1)?.id]);
 
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
 
     const handleScroll = () => {
-      setIsScrolled(el.scrollHeight - el.scrollTop - el.clientHeight > 30);
+      const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight < 30;
+      setIsScrolled(!atBottom);
+      wasAtBottomRef.current = atBottom;
     };
 
     el.addEventListener("scroll", handleScroll);
-
-    return () => {
-      el.removeEventListener("scroll", handleScroll);
-    };
+    return () => el.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!currentChat) return <Spinner />;
