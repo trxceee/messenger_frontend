@@ -48,15 +48,15 @@ export default async function RootLayout({
   return (
     <div className={`${fontRoboto.className} antialiased`}>
       <CurrentUserProvider>
-          <div
-            className="absolute inset-0 w-full h-full bg-linear-to-b from-accent/70 to-accent/20"
-            style={{
-              WebkitMaskImage: `url(${bg.src})`,
-              maskImage: `url(${bg.src})`,
-            }}
-          ></div>
-          {children}
-          <Toaster position="top-center" reverseOrder={false} />
+        <div
+          className="absolute inset-0 w-full h-full bg-linear-30 from-[#4f5bd5]/0 via-[#dd6cb9]/35 to-[#fec416]/70"
+          style={{
+            WebkitMaskImage: `url(${bg.src})`,
+            maskImage: `url(${bg.src})`,
+          }}
+        ></div>
+        {children}
+        <Toaster position="top-center" reverseOrder={false} />
       </CurrentUserProvider>
     </div>
   );

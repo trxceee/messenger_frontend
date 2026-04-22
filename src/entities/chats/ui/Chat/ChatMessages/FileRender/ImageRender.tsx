@@ -90,6 +90,7 @@ const ImageRender: FC<Props> = ({ images, isMy }) => {
                 key={img}
                 src={img}
                 alt={img}
+                loading="lazy"
                 onClick={() => {
                   dispatch(setIsImagesPreview(true));
                   dispatch(

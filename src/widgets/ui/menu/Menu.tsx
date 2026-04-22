@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from "@/app";
 import { useResizingSlice, setWidth, handleMouseMove } from "@/features";
 import MenuCompoonent from "./MenuCompoonent";
 import RightSideBar from "./RightSideBar/RightSideBar";
-import { Spinner } from "@/shared";
+import { appConfig, Spinner } from "@/shared";
 import {
   getIsFullScreenChat,
   setIsFullScreenChat,
@@ -15,12 +15,14 @@ import {
   useMessageSocket,
 } from "@/entities/chats/model";
 import { handleKeyDown } from "@/widgets/model";
+import { useTranslations } from "next-intl";
 
 const MIN_WIDTH = 300;
 const MAX_WIDTH = 680;
 
 const Menu = () => {
-  const userId = useAppSelector(getMyData).id ?? '';
+  const t = useTranslations();
+  const userId = useAppSelector(getMyData).id ?? "";
   const { data, isLoading } = userApi.useGetMeQuery();
 
   // getters
@@ -78,6 +80,16 @@ const Menu = () => {
       mediaWhenShort.removeEventListener("change", update);
     };
   }, [currentChat, dispatch]);
+
+  const otherMember = currentChat?.members.filter(
+    (member) => member.user.id !== userId,
+  )[0].user;
+
+  useEffect(() => {
+    const fullName = `${otherMember?.firstName} ${otherMember?.lastName}`;
+    const defaultTitle = `${t("pagesTitle.myChats")} - ${appConfig.NAME()}`;
+    document.title = `${otherMember ? fullName : defaultTitle}`;
+  }, [currentChat]);
 
   if (isLoading || !data) {
     return <Spinner />;

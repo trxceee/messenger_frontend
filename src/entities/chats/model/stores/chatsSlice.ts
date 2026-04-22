@@ -9,7 +9,7 @@ interface IChatsState {
   isFullScreenChat: boolean;
   isFilesModalOpen: boolean;
   dropFiles: Array<File>;
-  chatImages: {images: Array<string>, startIndex: number};
+  chatImages: { images: Array<string>; startIndex: number };
   isImagesPreview: boolean;
 }
 
@@ -20,7 +20,7 @@ const initialState: IChatsState = {
   isFullScreenChat: false,
   isFilesModalOpen: false,
   dropFiles: [],
-  chatImages: {images: [], startIndex: 0},
+  chatImages: { images: [], startIndex: 0 },
   isImagesPreview: false,
 };
 
@@ -252,14 +252,17 @@ export const chatsSlice = createSlice({
 
     // images
 
-    setChatImages: (state, action: PayloadAction<{images: Array<string>, startIndex: number}>) => {
+    setChatImages: (
+      state,
+      action: PayloadAction<{ images: Array<string>; startIndex: number }>,
+    ) => {
       state.chatImages = action.payload;
     },
     clearChatImages: (state) => {
-      state.chatImages = {images: [], startIndex: 0}
+      state.chatImages = { images: [], startIndex: 0 };
     },
     setIsImagesPreview: (state, action: PayloadAction<boolean>) => {
-      state.isImagesPreview = action.payload
+      state.isImagesPreview = action.payload;
     },
   },
 });
@@ -288,15 +291,14 @@ export const {
   clearDropFiles,
   clearChatImages,
   setIsImagesPreview,
-  setChatImages
+  setChatImages,
 } = chatsSlice.actions;
 
 //  selectors
 
 export const getMyDms = (state: RootState) => state.chats.myDms;
 
-export const getCurrentChat = (state: RootState) =>
-  state.chats.myDms.find((chat) => chat.id === state.chats.currentChat?.id);
+export const getCurrentChat = (state: RootState) => state.chats.currentChat;
 
 export const isUserOnline = (userId: string, state: RootState) => {
   const chat = state.chats.myDms.find((chat) =>
@@ -312,5 +314,6 @@ export const getIsFullScreenChat = (state: RootState) =>
 export const getIsFilesModalOpen = (state: RootState) =>
   state.chats.isFilesModalOpen;
 export const getDropFiles = (state: RootState) => state.chats.dropFiles;
-export const getIsImagesPreview = (state: RootState) => state.chats.isImagesPreview
-export const getChatImages = (state: RootState) => state.chats.chatImages
+export const getIsImagesPreview = (state: RootState) =>
+  state.chats.isImagesPreview;
+export const getChatImages = (state: RootState) => state.chats.chatImages;
