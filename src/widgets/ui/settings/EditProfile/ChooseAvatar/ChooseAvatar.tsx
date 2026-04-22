@@ -10,9 +10,7 @@ interface Props {
   size: number;
 }
 
-const ChooseAvatar: FC<
-  Props
-> = ({ avatar, size }) => {
+const ChooseAvatar: FC<Props> = ({ avatar, size }) => {
   const [featAvatar] = userApi.useFeatAvatarMutation();
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -39,6 +37,7 @@ const ChooseAvatar: FC<
         <Image
           src={avatar}
           alt="avatar"
+          loading="lazy"
           width={size}
           height={size}
           className="rounded-full object-cover aspect-square opacity-65"

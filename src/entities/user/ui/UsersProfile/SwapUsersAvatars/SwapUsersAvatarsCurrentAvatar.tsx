@@ -1,15 +1,15 @@
-'use client'
+"use client";
 
-import {motion} from 'framer-motion'
-import Image from 'next/image';
-import { Dispatch, FC, SetStateAction } from 'react';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Dispatch, FC, SetStateAction } from "react";
 
 interface Props {
-  size: number,
-  isFull: boolean,
-  currentImage: number,
-  setIsFull: Dispatch<SetStateAction<boolean>>
-  avatars?: string[]
+  size: number;
+  isFull: boolean;
+  currentImage: number;
+  setIsFull: Dispatch<SetStateAction<boolean>>;
+  avatars?: string[];
 }
 
 const SwapUsersAvatarsCurrentAvatar: FC<Props> = ({
@@ -40,6 +40,7 @@ const SwapUsersAvatarsCurrentAvatar: FC<Props> = ({
           alt="avatar"
           width={size}
           height={size}
+          loading="lazy"
           className="aspect-square object-cover w-full h-full"
         />
       )}
