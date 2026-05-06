@@ -1,8 +1,8 @@
 "use client";
 
-import { DragEvent, useEffect, useState } from "react";
+import { DragEvent, FC, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { EllipsisVertical, X } from "lucide-react";
+import { EllipsisVertical, Phone, X } from "lucide-react";
 
 import { useAppDispatch, useAppSelector } from "@/app";
 import {
@@ -30,7 +30,11 @@ import ChatUserInfo from "./ChatUserInfo/ChatUserInfo";
 import DropFilesModal from "../Files/DropFilesModal";
 import { ImageViewer } from "@/widgets";
 
-const Chat = () => {
+interface Props {
+  createOffer: () => Promise<void>;
+}
+
+const Chat: FC<Props> = ({ createOffer }) => {
   const dispatch = useAppDispatch();
 
   const me = useAppSelector(getMyData);
@@ -119,6 +123,15 @@ const Chat = () => {
       >
         <ChatUserInfo member={otherMember} />
 
+        <div
+          onClick={async (e) => {
+            e.stopPropagation();
+            await createOffer();
+          }}
+          className="iconHoverEffect text-icon"
+        >
+          <Phone size={22} />
+        </div>
         <div
           onClick={toggleUserActionsMenu}
           className="iconHoverEffect text-icon"

@@ -138,6 +138,11 @@
     "in": "at"
   },
   "chat": {
+    "call": {
+      "callsYou": "Calls you",
+      "waiting": "Waiting for the interlocutor...",
+      "endCall": "End call"
+    },
     "files": {
       "filesOne": "file",
       "filesFew": "files",
