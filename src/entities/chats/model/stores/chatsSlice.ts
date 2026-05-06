@@ -2,6 +2,8 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Chat, Message } from "../types/chatsTypes";
 import { RootState } from "@/app";
 
+type CallStats = "closed" | "offer" | "active";
+
 interface IChatsState {
   myDms: Chat[];
   editMessage: Message | null;
@@ -11,6 +13,8 @@ interface IChatsState {
   dropFiles: Array<File>;
   chatImages: { images: Array<string>; startIndex: number };
   isImagesPreview: boolean;
+  callStatus: CallStats;
+  callData: { data: RTCSessionDescriptionInit | null; userId: string };
 }
 
 const initialState: IChatsState = {
@@ -22,6 +26,8 @@ const initialState: IChatsState = {
   dropFiles: [],
   chatImages: { images: [], startIndex: 0 },
   isImagesPreview: false,
+  callStatus: "closed",
+  callData: { data: null, userId: "" },
 };
 
 // helpers
@@ -264,6 +270,19 @@ export const chatsSlice = createSlice({
     setIsImagesPreview: (state, action: PayloadAction<boolean>) => {
       state.isImagesPreview = action.payload;
     },
+
+    // call
+
+    changeCallStatus: (
+      state,
+      action: PayloadAction<{
+        status: CallStats;
+        data: { data: RTCSessionDescriptionInit | null; userId: string };
+      }>,
+    ) => {
+      state.callStatus = action.payload.status;
+      state.callData = action.payload.data;
+    },
   },
 });
 
@@ -292,6 +311,7 @@ export const {
   clearChatImages,
   setIsImagesPreview,
   setChatImages,
+  changeCallStatus,
 } = chatsSlice.actions;
 
 //  selectors
@@ -317,3 +337,5 @@ export const getDropFiles = (state: RootState) => state.chats.dropFiles;
 export const getIsImagesPreview = (state: RootState) =>
   state.chats.isImagesPreview;
 export const getChatImages = (state: RootState) => state.chats.chatImages;
+export const getCallStatus = (state: RootState) => state.chats.callStatus;
+export const getCallData = (state: RootState) => state.chats.callData;

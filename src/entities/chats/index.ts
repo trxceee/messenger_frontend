@@ -30,5 +30,8 @@ export {
   clearChatImages,
   setIsImagesPreview,
   getChatImages,
+  changeCallStatus,
+  getCallStatus,
+  getCallData,
 } from "./model";
 export { chatsApi } from "./api";

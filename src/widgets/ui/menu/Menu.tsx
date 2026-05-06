@@ -2,13 +2,14 @@
 
 import { AnimatePresence } from "framer-motion";
 import { ChatMessages, getCurrentChat, getMyData, userApi } from "@/entities";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useAppDispatch, useAppSelector } from "@/app";
 import { useResizingSlice, setWidth, handleMouseMove } from "@/features";
 import MenuCompoonent from "./MenuCompoonent";
 import RightSideBar from "./RightSideBar/RightSideBar";
-import { appConfig, Spinner } from "@/shared";
+import { appConfig, ModalConstructor, Spinner, useWebRTC } from "@/shared";
 import {
+  getCallStatus,
   getIsFullScreenChat,
   setIsFullScreenChat,
   useChatSocket,
@@ -16,6 +17,7 @@ import {
 } from "@/entities/chats/model";
 import { handleKeyDown } from "@/widgets/model";
 import { useTranslations } from "next-intl";
+import CallModal from "@/entities/calls/ui/CallModal";
 
 const MIN_WIDTH = 300;
 const MAX_WIDTH = 680;
@@ -29,7 +31,7 @@ const Menu = () => {
   const width = useAppSelector(useResizingSlice.selectors.selectWidth);
   const currentChat = useAppSelector(getCurrentChat);
   const isFullScreenChat = useAppSelector(getIsFullScreenChat);
-
+  const callStatus = useAppSelector(getCallStatus);
   // setters
   const dispatch = useAppDispatch();
 
@@ -38,6 +40,17 @@ const Menu = () => {
 
   useMessageSocket(userId);
   useChatSocket(userId);
+  const otherMember = currentChat?.members.find(
+    (member) => member.user.id !== userId,
+  )?.user;
+
+  const {
+    createOffer,
+    closeCall,
+    createAnswer,
+    localVideoRef,
+    remoteVideoRef,
+  } = useWebRTC(userId ?? "", currentChat?.id ?? "", otherMember?.id ?? "");
 
   useEffect(() => {
     const handleMouseUp = () => {
@@ -81,10 +94,6 @@ const Menu = () => {
     };
   }, [currentChat, dispatch]);
 
-  const otherMember = currentChat?.members.filter(
-    (member) => member.user.id !== userId,
-  )[0].user;
-
   useEffect(() => {
     const fullName = `${otherMember?.firstName} ${otherMember?.lastName}`;
     const defaultTitle = `${t("pagesTitle.myChats")} - ${appConfig.NAME()}`;
@@ -112,8 +121,22 @@ const Menu = () => {
           ></div>
         </div>
       )}
-      {!!currentChat && <ChatMessages />}
+      {!!currentChat && <ChatMessages createOffer={createOffer} />}
       <RightSideBar />
+      <AnimatePresence>
+        {callStatus !== "closed" && (
+          <ModalConstructor
+            content={
+              <CallModal
+                closeCall={closeCall}
+                createAnswer={createAnswer}
+                localVideoRef={localVideoRef}
+                remoteVideoRef={remoteVideoRef}
+              />
+            }
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
